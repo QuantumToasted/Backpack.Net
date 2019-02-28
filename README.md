@@ -2,6 +2,8 @@
 
 A REST API wrapper for (most of) https://backpack.tf 's endpoints.
 
+A rewrite of [my old wrapper library](https://github.com/Kuromu/BackpackWebAPI), with a great amount of cleanup.
+
 ### Currently supported endpoints
 IGetCurrencies/v1
 
