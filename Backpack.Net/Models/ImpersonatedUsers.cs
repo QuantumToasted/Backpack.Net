@@ -8,6 +8,9 @@ namespace Backpack.Net
     /// </summary>
     public sealed class ImpersonatedUsers
     {
+        internal ImpersonatedUsers()
+        { }
+
         /// <summary>
         /// Whether or not the request was successful.
         /// </summary>

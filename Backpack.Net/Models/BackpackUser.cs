@@ -11,6 +11,9 @@ namespace Backpack.Net
     /// </summary>
     public sealed class BackpackUser
     {
+        internal BackpackUser()
+        { }
+
         /// <summary>
         /// The user's SteamID64 identifier.
         /// </summary>

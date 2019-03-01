@@ -8,6 +8,9 @@ namespace Backpack.Net
     /// </summary>
     public sealed class ImpersonatedUser
     {
+        internal ImpersonatedUser()
+        { }
+
         /// <summary>
         /// This user's SteamID64 identifier.
         /// </summary>

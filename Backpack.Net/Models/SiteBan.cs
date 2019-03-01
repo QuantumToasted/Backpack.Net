@@ -8,6 +8,9 @@ namespace Backpack.Net
     /// </summary>
     public sealed class SiteBan
     {
+        internal SiteBan()
+        { }
+
         /// <summary>
         /// The type of ban this is. See <seealso cref="SiteBanType"/> for a list of ban types.
         /// </summary>

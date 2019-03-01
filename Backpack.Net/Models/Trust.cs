@@ -7,6 +7,9 @@ namespace Backpack.Net
     /// </summary>
     public sealed class Trust
     {
+        internal Trust()
+        { }
+
         /// <summary>
         /// The amount of positive trust votes this user has received.
         /// </summary>

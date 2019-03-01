@@ -7,6 +7,9 @@ namespace Backpack.Net
     /// </summary>
     public sealed class Votes
     {
+        internal Votes()
+        { }
+
         /// <summary>
         /// The number of positive votes this user has cast.
         /// </summary>

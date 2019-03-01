@@ -8,6 +8,9 @@ namespace Backpack.Net
     /// </summary>
     public abstract class PriceIndex
     {
+        internal PriceIndex()
+        { }
+
         internal static PriceIndex Create(string name, Quality quality, string priceIndex)
         {
             if (quality == Quality.Unusual && 

@@ -7,6 +7,9 @@ namespace Backpack.Net
     /// </summary>
     public sealed class Voting
     {
+        internal Voting()
+        { }
+
         /// <summary>
         /// This user's site voting reputation.
         /// </summary>

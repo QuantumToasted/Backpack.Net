@@ -10,6 +10,9 @@ namespace Backpack.Net
     /// </summary>
     public sealed class BackpackUsers
     {
+        internal BackpackUsers()
+        { }
+
         /// <summary>
         /// Whether or not the request was successful.
         /// </summary>

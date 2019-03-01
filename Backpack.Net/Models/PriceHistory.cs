@@ -9,6 +9,9 @@ namespace Backpack.Net
     /// </summary>
     public sealed class PriceHistory
     {
+        internal PriceHistory()
+        { }
+
         /// <summary>
         /// Whether or not the request was successful.
         /// </summary>

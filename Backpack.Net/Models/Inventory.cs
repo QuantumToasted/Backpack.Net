@@ -8,6 +8,9 @@ namespace Backpack.Net
     /// </summary>
     public sealed class Inventory
     {
+        internal Inventory()
+        { }
+
         /// <summary>
         /// This inventory's ranking on backpack.tf.
         /// </summary>

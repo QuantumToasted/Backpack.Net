@@ -7,6 +7,9 @@ namespace Backpack.Net
     /// </summary>
     public sealed class PriceSuggestions
     {
+        internal PriceSuggestions()
+        { }
+
         /// <summary>
         /// The number of price suggestions this user has created.
         /// </summary>

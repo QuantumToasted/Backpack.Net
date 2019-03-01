@@ -12,12 +12,9 @@
     <RepositoryType>git</RepositoryType>
     <Copyright>See https://gitlab.com/QuantumToast/Backpack.Net/blob/master/LICENSE</Copyright>
     <PackageLicenseUrl>https://gitlab.com/QuantumToast/Backpack.Net/blob/master/LICENSE</PackageLicenseUrl>
-    <PackageReleaseNotes>Added all functional (and useful) REST endpoints:
-IGetCurrencies/v1
-IGetPriceHistory/v1
-IGetPrices/v4
-IGetUsers/GetImpersonatedUsers
-users/info/v1</PackageReleaseNotes>
+    <PackageReleaseNotes>Added internal empty constructors for all public models, since there was no reason to have them be able to be instantiated outside of the library.</PackageReleaseNotes>
+    <Version>1.0.1</Version>
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
