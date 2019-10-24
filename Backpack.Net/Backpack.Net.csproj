@@ -5,21 +5,26 @@
     <Authors>Daniel Jarski</Authors>
     <Product />
     <Description>A REST API wrapper for (most of) https://backpack.tf 's endpoints.</Description>
-    <PackageProjectUrl>https://gitlab.com/QuantumToast/Backpack.Net/</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/QuantumToasted/Backpack.Net</PackageProjectUrl>
     <NeutralLanguage>en</NeutralLanguage>
     <PackageTags>tf2 rest api</PackageTags>
     <RepositoryUrl>https://gitlab.com/QuantumToast/Backpack.Net/</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <Copyright>See https://gitlab.com/QuantumToast/Backpack.Net/blob/master/LICENSE</Copyright>
-    <PackageLicenseUrl>https://gitlab.com/QuantumToast/Backpack.Net/blob/master/LICENSE</PackageLicenseUrl>
-    <PackageReleaseNotes>Added internal empty constructors for all public models, since there was no reason to have them be able to be instantiated outside of the library.</PackageReleaseNotes>
-    <Version>1.0.1</Version>
-    <AssemblyVersion>1.0.1.0</AssemblyVersion>
+    <Copyright>See https://github.com/QuantumToasted/Backpack.Net/blob/master/LICENSE</Copyright>
+    <PackageLicenseUrl></PackageLicenseUrl>
+    <PackageReleaseNotes>Removed unnecessary using directives and comments. Also, migrated back to GitHub.</PackageReleaseNotes>
+    <Version>1.0.2</Version>
+    <AssemblyVersion>1.0.2.0</AssemblyVersion>
+    <FileVersion>1.0.2.0</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <NoWarn>1701;1702;CS0649</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile></DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
