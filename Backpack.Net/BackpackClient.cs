@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,8 +28,6 @@ namespace Backpack.Net
             _apiKey = apiKey;
             _http = new HttpClient();
         }
-
-        // public Currencies GetCurrencies
 
         /// <summary>
         /// Gets information about the currencies used by backpack.tf.
