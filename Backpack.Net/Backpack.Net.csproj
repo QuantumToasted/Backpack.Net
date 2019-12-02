@@ -8,14 +8,15 @@
     <PackageProjectUrl>https://github.com/QuantumToasted/Backpack.Net</PackageProjectUrl>
     <NeutralLanguage>en</NeutralLanguage>
     <PackageTags>tf2 rest api</PackageTags>
-    <RepositoryUrl>https://gitlab.com/QuantumToast/Backpack.Net/</RepositoryUrl>
+    <RepositoryUrl>https://github.com/QuantumToasted/Backpack.Net</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <Copyright></Copyright>
     <PackageLicenseUrl></PackageLicenseUrl>
-    <PackageReleaseNotes>Removed unnecessary using directives and comments. Also, migrated back to GitHub.</PackageReleaseNotes>
-    <Version>1.0.2</Version>
-    <AssemblyVersion>1.0.2.0</AssemblyVersion>
-    <FileVersion>1.0.2.0</FileVersion>
+    <PackageReleaseNotes>Fixed XML docs not being bundled with the package.
+No code changes.</PackageReleaseNotes>
+    <Version>1.0.4</Version>
+    <AssemblyVersion>1.0.4.0</AssemblyVersion>
+    <FileVersion>1.0.4.0</FileVersion>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
 
@@ -25,7 +26,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile></DocumentationFile>
+    <DocumentationFile>C:\Users\Daniel Jarski\source\repos\Backpack.Net\Backpack.Net\Backpack.Net.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
