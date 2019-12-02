@@ -56,7 +56,13 @@ namespace Backpack.Net
         /// <summary>
         /// This user has one or more economy bans on Steam.
         /// </summary>
+        [Obsolete("This value has been renamed to SteamEconomyBanned and will be removed in a future release.")]
         SteamEconomy = 256,
+
+        /// <summary>
+        /// This user has one or more economy bans on Steam.
+        /// </summary>
+        SteamEconomyBanned = 256,
 
         /// <summary>
         /// This user has one or more community bans on Steam.

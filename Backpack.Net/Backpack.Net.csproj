@@ -12,11 +12,11 @@
     <RepositoryType>git</RepositoryType>
     <Copyright></Copyright>
     <PackageLicenseUrl></PackageLicenseUrl>
-    <PackageReleaseNotes>Fixed XML docs not being bundled with the package.
-No code changes.</PackageReleaseNotes>
-    <Version>1.0.4</Version>
-    <AssemblyVersion>1.0.4.0</AssemblyVersion>
-    <FileVersion>1.0.4.0</FileVersion>
+    <PackageReleaseNotes>Renamed incorrect Integrations.cs enum file for BackpackUserFlags.
+BackpackUserFlags.SteamEconomy has been renamed to SteamEconomyBanned for consistency. Deprecated the old name.</PackageReleaseNotes>
+    <Version>1.0.5</Version>
+    <AssemblyVersion>1.0.5.0</AssemblyVersion>
+    <FileVersion>1.0.5.0</FileVersion>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
 
