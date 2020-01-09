@@ -114,8 +114,7 @@ namespace Backpack.Net
                 return JsonConvert.DeserializeObject<T>(content);
             }
         }
-
-
+        
         /// <inheritdoc />
         public void Dispose()
         {

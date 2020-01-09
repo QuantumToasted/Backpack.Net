@@ -2,6 +2,7 @@
 using System.Collections.Immutable;
 using System.Linq;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace Backpack.Net
 {
@@ -35,10 +36,11 @@ namespace Backpack.Net
         /// A collection of <see cref="BackpackUser"/>s.
         /// </summary>
         [JsonIgnore]
-        public ImmutableArray<BackpackUser> Users => _users.Select(x => x.Value.WithId(ulong.Parse(x.Key))).ToImmutableArray();
+        public ImmutableArray<BackpackUser> Users => _users.Where(x => x.Value is JObject)
+            .Select(x => x.Value.ToObject<BackpackUser>().WithId(ulong.Parse(x.Key))).ToImmutableArray();
 
         [JsonProperty("users")]
-        private readonly Dictionary<string, BackpackUser> _users;
+        private readonly Dictionary<string, JToken> _users;
 
         [JsonProperty("response")]
         private readonly BackpackResponse _response;

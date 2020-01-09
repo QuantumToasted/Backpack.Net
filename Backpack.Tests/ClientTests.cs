@@ -101,6 +101,16 @@ namespace Backpack.Tests
             }
         }
 
+        [Theory]
+        [InlineData(new ulong[] {203139091657654272, 167452465317281793 })]
+        public async Task TestFailedBackpackUsersAsync(ulong[] users)
+        {
+            var response = await Client.GetUsersAsync(users);
+
+            Assert.NotNull(response);
+            Assert.True(response.IsSuccess); // 
+        }
+
         [Fact]
         public async Task TestImpersonatedUsersAsync()
         {

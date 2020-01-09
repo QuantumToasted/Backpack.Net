@@ -54,26 +54,6 @@
         <member name="M:Backpack.Net.BackpackClient.Dispose">
             <inheritdoc />
         </member>
-        <member name="T:Backpack.Net.CurrencyValue">
-            <summary>
-            Represents additional currency values able to be requested for endpoints which return <see cref="T:Backpack.Net.Price"/> models.
-            </summary>
-        </member>
-        <member name="F:Backpack.Net.CurrencyValue.None">
-            <summary>
-            The <see cref="T:Backpack.Net.Price"/> model will only display its value.
-            </summary>
-        </member>
-        <member name="F:Backpack.Net.CurrencyValue.Raw">
-            <summary>
-            The <see cref="T:Backpack.Net.Price"/> model will carry a raw value, which is the value in the lowest currency without rounding.
-            </summary>
-        </member>
-        <member name="F:Backpack.Net.CurrencyValue.RawHigh">
-            <summary>
-            The <see cref="T:Backpack.Net.Price"/> model will carry a raw value and raw high value, which is the upper bound of the average value in the lowest currency without rounding.
-            </summary>
-        </member>
         <member name="T:Backpack.Net.BackpackUserFlags">
             <summary>
             Represents flags a <see cref="T:Backpack.Net.BackpackUser"/> can hold on the site.
@@ -129,6 +109,11 @@
             This user has one or more economy bans on Steam.
             </summary>
         </member>
+        <member name="F:Backpack.Net.BackpackUserFlags.SteamEconomyBanned">
+            <summary>
+            This user has one or more economy bans on Steam.
+            </summary>
+        </member>
         <member name="F:Backpack.Net.BackpackUserFlags.SteamCommunityBanned">
             <summary>
             This user has one or more community bans on Steam.
@@ -142,6 +127,26 @@
         <member name="F:Backpack.Net.BackpackUserFlags.ValveGameBanned">
             <summary>
             This user has one or more game bans on Steam.
+            </summary>
+        </member>
+        <member name="T:Backpack.Net.CurrencyValue">
+            <summary>
+            Represents additional currency values able to be requested for endpoints which return <see cref="T:Backpack.Net.Price"/> models.
+            </summary>
+        </member>
+        <member name="F:Backpack.Net.CurrencyValue.None">
+            <summary>
+            The <see cref="T:Backpack.Net.Price"/> model will only display its value.
+            </summary>
+        </member>
+        <member name="F:Backpack.Net.CurrencyValue.Raw">
+            <summary>
+            The <see cref="T:Backpack.Net.Price"/> model will carry a raw value, which is the value in the lowest currency without rounding.
+            </summary>
+        </member>
+        <member name="F:Backpack.Net.CurrencyValue.RawHigh">
+            <summary>
+            The <see cref="T:Backpack.Net.Price"/> model will carry a raw value and raw high value, which is the upper bound of the average value in the lowest currency without rounding.
             </summary>
         </member>
         <member name="T:Backpack.Net.ParticleEffect">
