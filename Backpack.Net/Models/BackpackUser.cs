@@ -39,10 +39,10 @@ namespace Backpack.Net
         public Uri AvatarUrl => new Uri(_avatar);
 
         /// <summary>
-        /// The last time this user was online on backpack.tf.
+        /// The last time this user was online on backpack.tf. Will be <see langword="null"/> if the user has never logged in.
         /// </summary>
         [JsonIgnore]
-        public DateTimeOffset LastOnline => BackpackClient.UnixEpoch.AddSeconds(_lastOnline);
+        public DateTimeOffset? LastOnline => _lastOnline == 0 ? (DateTimeOffset?) null : BackpackClient.UnixEpoch.AddSeconds(_lastOnline);
 
         [JsonProperty("admin")]
         private readonly bool _admin;
