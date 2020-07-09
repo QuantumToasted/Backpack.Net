@@ -2,7 +2,7 @@
 
 namespace Backpack.Net
 {
-    internal abstract class BackpackResponse
+    internal class BackpackResponse
     {
         [JsonProperty("message")]
         internal string ErrorMessage { get; private set; }

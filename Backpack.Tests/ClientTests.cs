@@ -77,7 +77,7 @@ namespace Backpack.Tests
         }
 
         [Theory]
-        [InlineData(new ulong[] {76561198112217552, 76561198261978034, 76561198120467518, 76561198051696861, 76561198074081347})]
+        [InlineData(new ulong[] {76561198112217552, 76561198261978034, 76561198120467518, 76561198051696861, 76561198074081347, 76561198126507963 })]
         public async Task TestBackpackUsersAsync(ulong[] users)
         {
             var response = await Client.GetUsersAsync(users);
