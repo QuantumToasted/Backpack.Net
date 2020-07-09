@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -12,10 +12,12 @@
     <RepositoryType>git</RepositoryType>
     <Copyright></Copyright>
     <PackageLicenseUrl></PackageLicenseUrl>
-    <PackageReleaseNotes>Fixed an unhandled exception being thrown when invalid IDs were passed to GetUsersAsync().</PackageReleaseNotes>
-    <Version>1.0.6</Version>
-    <AssemblyVersion>1.0.6.0</AssemblyVersion>
-    <FileVersion>1.0.6.0</FileVersion>
+    <PackageReleaseNotes>Fixed XML docs not being generated for the resulting NuGet package.
+Updated BackpackUser#LastOnline to be null if the user has never logged in.
+Fixed GetPrices throwing when no new prices were found.</PackageReleaseNotes>
+    <Version>1.1.0</Version>
+    <AssemblyVersion>1.1.0.0</AssemblyVersion>
+    <FileVersion>1.1.0.0</FileVersion>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
 
