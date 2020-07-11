@@ -104,11 +104,6 @@
             This user is marked as "caution" on SteamRep.
             </summary>
         </member>
-        <member name="F:Backpack.Net.BackpackUserFlags.SteamEconomy">
-            <summary>
-            This user has one or more economy bans on Steam.
-            </summary>
-        </member>
         <member name="F:Backpack.Net.BackpackUserFlags.SteamEconomyBanned">
             <summary>
             This user has one or more economy bans on Steam.
@@ -156,627 +151,812 @@
         </member>
         <member name="F:Backpack.Net.ParticleEffect.CommunitySparkle">
             <summary>
-            "Community Sparkle" Unusual effect.
+            "Community Sparkle" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.HolyGlow">
             <summary>
-            "Holy Glow" Unusual effect.
+            "Holy Glow" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.GreenConfetti">
             <summary>
-            "Green Confetti" Unusual effect.
+            "Green Confetti" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.PurpleConfetti">
             <summary>
-            "Purple Confetti" Unusual effect.
+            "Purple Confetti" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.HauntedGhosts">
             <summary>
-            "Haunted Ghosts" Unusual effect.
+            "Haunted Ghosts" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.GreenEnergy">
             <summary>
-            "Green Energy" Unusual effect.
+            "Green Energy" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.PurpleEnergy">
             <summary>
-            "Purple Energy" Unusual effect.
+            "Purple Energy" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.CirclingTFLogo">
             <summary>
-            "Circling TF Logo" Unusual effect.
+            "Circling TF Logo" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.MassedFlies">
             <summary>
-            "Massed Flies" Unusual effect.
+            "Massed Flies" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.BurningFlames">
             <summary>
-            "Burning Flames" Unusual effect.
+            "Burning Flames" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.ScorchingFlames">
             <summary>
-            "Scorching Flames" Unusual effect.
+            "Scorching Flames" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.SearingPlasma">
             <summary>
-            "Searing Plasma" Unusual effect.
+            "Searing Plasma" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.VividPlasma">
             <summary>
-            "Vivid Plasma" Unusual effect.
+            "Vivid Plasma" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.Sunbeams">
             <summary>
-            "Sunbeams" Unusual effect.
+            "Sunbeams" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.CirclingPeaceSign">
             <summary>
-            "Circling Peace Sign" Unusual effect.
+            "Circling Peace Sign" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.CirclingHeart">
             <summary>
-            "Circling Heart" Unusual effect.
+            "Circling Heart" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.MapStamps">
             <summary>
-            "Map Stamps" Unusual effect.
+            "Map Stamps" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.StormyStorm">
             <summary>
-            "Stormy Storm" Unusual effect.
+            "Stormy Storm" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.BlizzardyStorm">
             <summary>
-            "Blizzardy Storm" Unusual effect.
+            "Blizzardy Storm" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.NutsNBolts">
             <summary>
-            "Nuts n' Bolts" Unusual effect.
+            "Nuts n' Bolts" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.OrbitingPlanets">
             <summary>
-            "Orbiting Plants" Unusual effect.
+            "Orbiting Planets" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.OrbitingFire">
             <summary>
-            "Orbiting Fire" Unusual effect.
+            "Orbiting Fire" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.Bubbling">
             <summary>
-            "Bubbling" Unusual effect.
+            "Bubbling" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.Smoking">
             <summary>
-            "Smoking" Unusual effect.
+            "Smoking" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.Steaming">
             <summary>
-            "Steaming" Unusual effect.
+            "Steaming" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.FlamingLantern">
             <summary>
-            "Flaming Lantern" Unusual effect.
+            "Flaming Lantern" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.CloudyMoon">
             <summary>
-            "Cloudy Moon" Unusual effect.
+            "Cloudy Moon" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.CauldronBubbles">
             <summary>
-            "Cauldron Bubbles" Unusual effect.
+            "Cauldron Bubbles" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.EerieOrbitingFire">
             <summary>
-            "Eerie Orbiting Fire" Unusual effect.
+            "Eerie Orbiting Fire" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.Knifestorm">
             <summary>
-            "Knifestorm" Unusual effect.
+            "Knifestorm" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.MistySkull">
             <summary>
-            "Misty Skull" Unusual effect.
+            "Misty Skull" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.HarvestMoon">
             <summary>
-            "Harvest Moon" Unusual effect.
+            "Harvest Moon" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.ItsASecretToEverybody">
             <summary>
-            "It's A Secret To Everybody" Unusual effect.
+            "It's A Secret To Everybody" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.Stormy13thHour">
             <summary>
-            "Stormy 13th Hour" Unusual effect.
+            "Stormy 13th Hour" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.KillAWatt">
             <summary>
-            "Kill-a-Watt" Unusual effect.
+            "Kill-a-Watt" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.TerrorWatt">
             <summary>
-            "Terror-Watt" Unusual effect.
+            "Terror-Watt" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.Cloud9">
             <summary>
-            "Cloud 9" Unusual effect.
+            "Cloud 9" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.AcesHigh">
             <summary>
-            "Aces High" Unusual effect.
+            "Aces High" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.DeadPresidents">
             <summary>
-            "Dead Presidents" Unusual effect.
+            "Dead Presidents" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.MiamiNights">
             <summary>
-            "Miami Nights" Unusual effect.
+            "Miami Nights" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.DiscoBeatDown">
             <summary>
-            "Disco Beat Down" Unusual effect.
+            "Disco Beat Down" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.Phosphorous">
             <summary>
-            "Phosphorous" Unusual effect.
+            "Phosphorous" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.Sulphurous">
             <summary>
-            "Sulphurous" Unusual effect.
+            "Sulphurous" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.MemoryLeak">
             <summary>
-            "Memory Leak" Unusual effect.
+            "Memory Leak" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.Overclocked">
             <summary>
-            "Overclocked" Unusual effect.
+            "Overclocked" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.Electrostatic">
             <summary>
-            "Electrostatic" Unusual effect.
+            "Electrostatic" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.PowerSurge">
             <summary>
-            "Power Surge" Unusual effect.
+            "Power Surge" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.AntiFreeze">
             <summary>
-            "Anti-Freeze" Unusual effect.
+            "Anti-Freeze" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.TimeWarp">
             <summary>
-            "Time Warp" Unusual effect.
+            "Time Warp" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.GreenBlackHole">
             <summary>
-            "Green Black Hole" Unusual effect.
+            "Green Black Hole" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.Roboactive">
             <summary>
-            "Roboactive" Unusual effect.
+            "Roboactive" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.Arcana">
             <summary>
-            "Arcana" Unusual effect.
+            "Arcana" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.Spellbound">
             <summary>
-            "Spellbound" Unusual effect.
+            "Spellbound" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.ChiropteraVenenata">
             <summary>
-            "Chiroptera Venenata" Unusual effect.
+            "Chiroptera Venenata" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.PoisonedShadows">
             <summary>
-            "Poisoned Shadows" Unusual effect.
+            "Poisoned Shadows" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.SomethingBurningThisWayComes">
             <summary>
-            "Something Burning This Way Comes" Unusual effect.
+            "Something Burning This Way Comes" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.Hellfire">
             <summary>
-            "Hellfire" Unusual effect.
+            "Hellfire" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.Darkblaze">
             <summary>
-            "Darkblaze" Unusual effect.
+            "Darkblaze" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.Demonflame">
             <summary>
-            "Demonflame" Unusual effect.
+            "Demonflame" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.BonzoTheAllGnawing">
             <summary>
-            "Bonzo The All-Gnawing" Unusual effect.
+            "Bonzo The All-Gnawing" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.Amaranthine">
             <summary>
-            "Amaranthine" Unusual effect.
+            "Amaranthine" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.StareFromBeyond">
             <summary>
-            "Stare From Beyond" Unusual effect.
+            "Stare From Beyond" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.TheOoze">
             <summary>
-            "The Ooze" Unusual effect.
+            "The Ooze" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.GhastlyGhostsJr">
             <summary>
-            "Ghastly Ghosts Jr" Unusual effect.
+            "Ghastly Ghosts Jr" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.HauntedPhantasmJr">
             <summary>
-            "Haunted Phantasm Jr" Unusual effect.
+            "Haunted Phantasm Jr" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.Frostbite">
             <summary>
-            "Frostbite" Unusual effect.
+            "Frostbite" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.MoltenMallard">
             <summary>
-            "Molten Mallard" Unusual effect.
+            "Molten Mallard" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.MorningGlory">
             <summary>
-            "Morning Glory" Unusual effect.
+            "Morning Glory" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.DeathAtDusk">
             <summary>
-            "Death at Dusk" Unusual effect.
+            "Death at Dusk" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.Abduction">
             <summary>
-            "Abduction" Unusual effect.
+            "Abduction" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.Atomic">
             <summary>
-            "Atomic" Unusual effect.
+            "Atomic" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.Subatomic">
             <summary>
-            "Subatomic" Unusual effect.
+            "Subatomic" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.ElectricHatProtector">
             <summary>
-            "Electric Hat Protector" Unusual effect.
+            "Electric Hat Protector" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.MagneticHatProtector">
             <summary>
-            "Magnetic Hat Protector" Unusual effect.
+            "Magnetic Hat Protector" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.VoltaicHatProtector">
             <summary>
-            "Voltaic Hat Protector" Unusual effect.
+            "Voltaic Hat Protector" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.GalacticCodex">
             <summary>
-            "Galactic Codex" Unusual effect.
+            "Galactic Codex" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.AncientCodex">
             <summary>
-            "Ancient Codex" Unusual effect.
+            "Ancient Codex" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.Nebula">
             <summary>
-            "Nebula" Unusual effect.
+            "Nebula" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.DeathByDisco">
             <summary>
-            "Death by Disco" Unusual effect.
+            "Death by Disco" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.ItsAMysteryToEveryone">
             <summary>
-            "It's a mystery to everyone" Unusual effect.
+            "It's a mystery to everyone" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.ItsAPuzzleToMe">
             <summary>
-            "It's a puzzle to me" Unusual effect.
+            "It's a puzzle to me" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.EtherTrail">
             <summary>
-            "Ether Trail" Unusual effect.
+            "Ether Trail" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.NetherTrail">
             <summary>
-            "Nether Trail" Unusual effect.
+            "Nether Trail" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.AncientEldritch">
             <summary>
-            "Ancient Eldritch" Unusual effect.
+            "Ancient Eldritch" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.EldritchFlame">
             <summary>
-            "Eldritch Flame" Unusual effect.
+            "Eldritch Flame" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.NeutronStar">
             <summary>
-            "Neutron Star" Unusual effect.
+            "Neutron Star" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.TeslaCoil">
             <summary>
-            "Tesla Coil" Unusual effect.
+            "Tesla Coil" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.StarstormInsomnia">
             <summary>
-            "Starstorm Insomnia" Unusual effect.
+            "Starstorm Insomnia" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.StarstormSlumber">
             <summary>
-            "Starstorm Slumber" Unusual effect.
+            "Starstorm Slumber" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.BrainDrain">
             <summary>
-            "Brain Drain" Unusual effect.
+            "Brain Drain" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.OpenMind">
             <summary>
-            "Open Mind" Unusual effect.
+            "Open Mind" Unusual particle effect.
             </summary>
         </member>
-        <member name="F:Backpack.Net.ParticleEffect.HeadofSteam">
+        <member name="F:Backpack.Net.ParticleEffect.HeadOfSteam">
             <summary>
-            "Head of Steam" Unusual effect.
+            "Head of Steam" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.GalacticGateway">
             <summary>
-            "Galactic Gateway" Unusual effect.
+            "Galactic Gateway" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.TheEldritchOpening">
             <summary>
-            "The Eldritch Opening" Unusual effect.
+            "The Eldritch Opening" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.TheDarkDoorway">
             <summary>
-            "The Dark Doorway" Unusual effect.
+            "The Dark Doorway" Unusual particle effect.
             </summary>
         </member>
-        <member name="F:Backpack.Net.ParticleEffect.RingofFire">
+        <member name="F:Backpack.Net.ParticleEffect.RingOfFire">
             <summary>
-            "Ring of Fire" Unusual effect.
+            "Ring of Fire" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.ViciousCircle">
             <summary>
-            "Vicious Circle" Unusual effect.
+            "Vicious Circle" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.WhiteLightning">
             <summary>
-            "White Lightning" Unusual effect.
+            "White Lightning" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.OmniscientOrb">
             <summary>
-            "Omniscient Orb" Unusual effect.
+            "Omniscient Orb" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.Clairvoyance">
             <summary>
-            "Clairvoyance" Unusual effect.
+            "Clairvoyance" Unusual particle effect.
+            </summary>
+        </member>
+        <member name="F:Backpack.Net.ParticleEffect.FifthDimension">
+            <summary>
+            "Fifth Dimension" Unusual particle effect.
+            </summary>
+        </member>
+        <member name="F:Backpack.Net.ParticleEffect.ViciousVortex">
+            <summary>
+            "Vicious Vortex" Unusual particle effect.
+            </summary>
+        </member>
+        <member name="F:Backpack.Net.ParticleEffect.MenacingMiasma">
+            <summary>
+            "Menacing Miasma" Unusual particle effect.
+            </summary>
+        </member>
+        <member name="F:Backpack.Net.ParticleEffect.AbyssalAura">
+            <summary>
+            "Abyssal Aura" Unusual particle effect.
+            </summary>
+        </member>
+        <member name="F:Backpack.Net.ParticleEffect.WickedWood">
+            <summary>
+            "Wicked Wood" Unusual particle effect.
+            </summary>
+        </member>
+        <member name="F:Backpack.Net.ParticleEffect.GhastlyGrove">
+            <summary>
+            "Ghastly Grove" Unusual particle effect.
+            </summary>
+        </member>
+        <member name="F:Backpack.Net.ParticleEffect.MysticalMedley">
+            <summary>
+            "Mystical Medley" Unusual particle effect.
+            </summary>
+        </member>
+        <member name="F:Backpack.Net.ParticleEffect.EtherealEssence">
+            <summary>
+            "Ethereal Essence" Unusual particle effect.
+            </summary>
+        </member>
+        <member name="F:Backpack.Net.ParticleEffect.TwistedRadiance">
+            <summary>
+            "Twisted Radiance" Unusual particle effect.
+            </summary>
+        </member>
+        <member name="F:Backpack.Net.ParticleEffect.VioletVortex">
+            <summary>
+            "Violet Vortex" Unusual particle effect.
+            </summary>
+        </member>
+        <member name="F:Backpack.Net.ParticleEffect.VerdantVortex">
+            <summary>
+            "Verdex Vortex" Unusual particle effect.
+            </summary>
+        </member>
+        <member name="F:Backpack.Net.ParticleEffect.ValiantVortex">
+            <summary>
+            "Valiant Vortex" Unusual particle effect.
+            </summary>
+        </member>
+        <member name="F:Backpack.Net.ParticleEffect.SparklingLights">
+            <summary>
+            "Sparkling Lights" Unusual particle effect.
+            </summary>
+        </member>
+        <member name="F:Backpack.Net.ParticleEffect.FrozenIcefall">
+            <summary>
+            "Frozen Ice Fall" Unusual particle effect.
+            </summary>
+        </member>
+        <member name="F:Backpack.Net.ParticleEffect.FragmentedGluons">
+            <summary>
+            "Fragmented Gluons" Unusual particle effect.
+            </summary>
+        </member>
+        <member name="F:Backpack.Net.ParticleEffect.FragmentedQuarks">
+            <summary>
+            "Fragmented Quarks" Unusual particle effect.
+            </summary>
+        </member>
+        <member name="F:Backpack.Net.ParticleEffect.FragmentedPhotons">
+            <summary>
+            "Fragmented Photons" Unusual particle effect.
+            </summary>
+        </member>
+        <member name="F:Backpack.Net.ParticleEffect.DefragmentingReality">
+            <summary>
+            "Defragmenting Reality" Unusual particle effect.
+            </summary>
+        </member>
+        <member name="F:Backpack.Net.ParticleEffect.FragmentingReality">
+            <summary>
+            "Fragmenting Reality" Unusual particle effect.
+            </summary>
+        </member>
+        <member name="F:Backpack.Net.ParticleEffect.RefragmentingReality">
+            <summary>
+            "Refragmenting Reality" Unusual particle effect.
+            </summary>
+        </member>
+        <member name="F:Backpack.Net.ParticleEffect.Snowfallen">
+            <summary>
+            "Snowfallen" Unusual particle effect.
+            </summary>
+        </member>
+        <member name="F:Backpack.Net.ParticleEffect.Snowblinded">
+            <summary>
+            "Snowblinded" Unusual particle effect.
+            </summary>
+        </member>
+        <member name="F:Backpack.Net.ParticleEffect.PyrolandDaydream">
+            <summary>
+            "Pyroland Daydream" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.Hot">
             <summary>
-            "Hot" Unusual effect.
+            "Hot" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.Isotope">
             <summary>
-            "Isotope" Unusual effect.
+            "Isotope" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.Cool">
             <summary>
-            "Cool" Unusual effect.
+            "Cool" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.EnergyOrb">
             <summary>
-            "Energy Orb" Unusual effect.
+            "Energy Orb" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.Showstopper">
             <summary>
-            "Showstopper" Unusual effect.
+            "Showstopper" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.HolyGrail">
             <summary>
-            "Holy Grail" Unusual effect.
+            "Holy Grail" Unusual particle effect.
             </summary>
         </member>
-        <member name="F:Backpack.Net.ParticleEffect.SeventyTwo">
+        <member name="F:Backpack.Net.ParticleEffect._72">
             <summary>
-            "72" Unusual effect.
+            "'72" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.FountainOfDelight">
             <summary>
-            "Fountain of Delight" Unusual effect.
+            "Fountain of Delight" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.ScreamingTiger">
             <summary>
-            "Screaming Tiger" Unusual effect.
+            "Screaming Tiger" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.SkillGottenGains">
             <summary>
-            "Skill Gotten Gains" Unusual effect.
+            "Skill Gotten Gains" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.MidnightWhirlwind">
             <summary>
-            "Midnight Whirlwind" Unusual effect.
+            "Midnight Whirlwind" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.SilverCyclone">
             <summary>
-            "Silver Cyclone" Unusual effect.
+            "Silver Cyclone" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.MegaStrike">
             <summary>
-            "Mega Strike" Unusual effect.
+            "Mega Strike" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.HauntedPhantasm">
             <summary>
-            "Haunted Phantasm" Unusual effect.
+            "Haunted Phantasm" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.GhastlyGhosts">
             <summary>
-            "Ghastly Ghosts" Unusual effect.
+            "Ghastly Ghosts" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.HellishInferno">
             <summary>
-            "Hellish Inferno" Unusual effect.
+            "Hellish Inferno" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.SpectralSwirl">
             <summary>
-            "Spectral Swirl" Unusual effect.
+            "Spectral Swirl" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.InfernalFlames">
             <summary>
-            "Infernal Flames" Unusual effect.
+            "Infernal Flames" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.InfernalSmoke">
             <summary>
-            "Infernal Smoke" Unusual effect.
+            "Infernal Smoke" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.AcidicBubblesOfEnvy">
             <summary>
-            "Acidic Bubbles of Envy" Unusual effect.
+            "Acidic Bubbles of Envy" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.FlammableBubblesOfAttraction">
             <summary>
-            "Flammable Bubbles of Attraction" Unusual effect.
+            "Flammable Bubbles of Attraction" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.PoisonousBubblesOfRegret">
             <summary>
-            "Poisonous Bubbles of Regret" Unusual effect.
+            "Poisonous Bubbles of Regret" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.RoaringRockets">
             <summary>
-            "Roaring Rockets" Unusual effect.
+            "Roaring Rockets" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.SpookyNight">
             <summary>
-            "Spooky Night" Unusual effect.
+            "Spooky Night" Unusual particle effect.
             </summary>
         </member>
         <member name="F:Backpack.Net.ParticleEffect.OminousNight">
             <summary>
-            "Ominous Night" Unusual effect.
+            "Ominous Night" Unusual particle effect.
+            </summary>
+        </member>
+        <member name="F:Backpack.Net.ParticleEffect.Bewitched">
+            <summary>
+            "Bewitched" Unusual particle effect.
+            </summary>
+        </member>
+        <member name="F:Backpack.Net.ParticleEffect.Accursed">
+            <summary>
+            "Accursed" Unusual particle effect.
+            </summary>
+        </member>
+        <member name="F:Backpack.Net.ParticleEffect.Enchanted">
+            <summary>
+            "Enchanted" Unusual particle effect.
+            </summary>
+        </member>
+        <member name="F:Backpack.Net.ParticleEffect.StaticMist">
+            <summary>
+            "Static Mist" Unusual particle effect.
+            </summary>
+        </member>
+        <member name="F:Backpack.Net.ParticleEffect.EerieLightning">
+            <summary>
+            "Eerie Lightning" Unusual particle effect.
+            </summary>
+        </member>
+        <member name="F:Backpack.Net.ParticleEffect.TerrifyingThunder">
+            <summary>
+            "Terrifying Thunder" Unusual particle effect.
+            </summary>
+        </member>
+        <member name="F:Backpack.Net.ParticleEffect.JarateShock">
+            <summary>
+            "Jarate Shock" Unusual particle effect.
+            </summary>
+        </member>
+        <member name="F:Backpack.Net.ParticleEffect.NetherVoid">
+            <summary>
+            "Nether Void" Unusual particle effect.
+            </summary>
+        </member>
+        <member name="F:Backpack.Net.ParticleEffect.GoodHeartedGoodies">
+            <summary>
+            "Good-Hearted Goodies" Unusual particle effect.
+            </summary>
+        </member>
+        <member name="F:Backpack.Net.ParticleEffect.WinteryWisp">
+            <summary>
+            "Wintery Wisp" Unusual particle effect.
+            </summary>
+        </member>
+        <member name="F:Backpack.Net.ParticleEffect.ArcticAurora">
+            <summary>
+            "Artic Aurora" Unusual particle effect.
+            </summary>
+        </member>
+        <member name="F:Backpack.Net.ParticleEffect.WinterSpirit">
+            <summary>
+            "Winter Spirit" Unusual particle effect.
+            </summary>
+        </member>
+        <member name="F:Backpack.Net.ParticleEffect.FestiveSpirit">
+            <summary>
+            "Festive Spirit" Unusual particle effect.
+            </summary>
+        </member>
+        <member name="F:Backpack.Net.ParticleEffect.MagicalSpirit">
+            <summary>
+            "Magical Spirit" Unusual particle effect.
             </summary>
         </member>
         <member name="T:Backpack.Net.Quality">
