@@ -91,7 +91,7 @@ namespace Backpack.Net
                 if (_bans.IsSteamRepCaution)
                     flags |= BackpackUserFlags.SteamRepCaution;
                 if (_bans.Valve.IsEconomyBanned)
-                    flags |= BackpackUserFlags.SteamEconomy;
+                    flags |= BackpackUserFlags.SteamEconomyBanned;
                 if (_bans.Valve.IsCommunityBanned)
                     flags |= BackpackUserFlags.SteamCommunityBanned;
                 if (_bans.Valve.IsVACBanned)
