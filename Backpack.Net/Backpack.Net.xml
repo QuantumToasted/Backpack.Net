@@ -931,7 +931,7 @@
         </member>
         <member name="P:Backpack.Net.BackpackUser.LastOnline">
             <summary>
-            The last time this user was online on backpack.tf.
+            The last time this user was online on backpack.tf. Will be <see langword="null"/> if the user has never logged in.
             </summary>
         </member>
         <member name="P:Backpack.Net.BackpackUser.AmountDonated">
@@ -1385,6 +1385,12 @@
         <member name="M:Backpack.Net.DefaultPriceIndex.ToString">
             <inheritdoc />
         </member>
+        <member name="M:Backpack.Net.DefaultPriceIndex.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Backpack.Net.DefaultPriceIndex.GetHashCode">
+            <inheritdoc />
+        </member>
         <member name="T:Backpack.Net.UnusualPriceIndex">
             <inheritdoc />
             <summary>
@@ -1397,6 +1403,12 @@
             </summary>
         </member>
         <member name="M:Backpack.Net.UnusualPriceIndex.ToString">
+            <inheritdoc />
+        </member>
+        <member name="M:Backpack.Net.UnusualPriceIndex.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Backpack.Net.UnusualPriceIndex.GetHashCode">
             <inheritdoc />
         </member>
         <member name="T:Backpack.Net.CratePriceIndex">
@@ -1413,6 +1425,12 @@
         <member name="M:Backpack.Net.CratePriceIndex.ToString">
             <inheritdoc />
         </member>
+        <member name="M:Backpack.Net.CratePriceIndex.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Backpack.Net.CratePriceIndex.GetHashCode">
+            <inheritdoc />
+        </member>
         <member name="T:Backpack.Net.ModifierPriceIndex">
             <inheritdoc />
             <summary>
@@ -1425,6 +1443,12 @@
             </summary>
         </member>
         <member name="M:Backpack.Net.ModifierPriceIndex.ToString">
+            <inheritdoc />
+        </member>
+        <member name="M:Backpack.Net.ModifierPriceIndex.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Backpack.Net.ModifierPriceIndex.GetHashCode">
             <inheritdoc />
         </member>
         <member name="T:Backpack.Net.ChemistrySetPriceIndex">
@@ -1444,6 +1468,12 @@
             </summary>
         </member>
         <member name="M:Backpack.Net.ChemistrySetPriceIndex.ToString">
+            <inheritdoc />
+        </member>
+        <member name="M:Backpack.Net.ChemistrySetPriceIndex.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Backpack.Net.ChemistrySetPriceIndex.GetHashCode">
             <inheritdoc />
         </member>
         <member name="T:Backpack.Net.PriceSuggestions">

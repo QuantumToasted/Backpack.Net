@@ -12,12 +12,11 @@
     <RepositoryType>git</RepositoryType>
     <Copyright></Copyright>
     <PackageLicenseUrl></PackageLicenseUrl>
-    <PackageReleaseNotes>Fixed XML docs not being generated for the resulting NuGet package.
-Updated BackpackUser#LastOnline to be null if the user has never logged in.
-Fixed GetPrices throwing when no new prices were found.</PackageReleaseNotes>
-    <Version>1.1.0</Version>
-    <AssemblyVersion>1.1.0.0</AssemblyVersion>
-    <FileVersion>1.1.0.0</FileVersion>
+    <PackageReleaseNotes>Fixed missing equality operators on price index types.
+Added missing unusual particle effect IDs as of July 11th, 2020.</PackageReleaseNotes>
+    <Version>1.1.1</Version>
+    <AssemblyVersion>1.1.1.0</AssemblyVersion>
+    <FileVersion>1.1.1.0</FileVersion>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
 
