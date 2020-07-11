@@ -92,6 +92,14 @@ namespace Backpack.Net
         /// <inheritdoc />
         public override string ToString()
             => "0";
+
+        /// <inheritdoc />
+        public override bool Equals(object obj)
+            => obj is DefaultPriceIndex;
+
+        /// <inheritdoc />
+        public override int GetHashCode()
+            => 0;
     }
 
     /// <inheritdoc />
@@ -113,6 +121,14 @@ namespace Backpack.Net
         /// <inheritdoc />
         public override string ToString()
             => ((int) ParticleEffect).ToString();
+
+        /// <inheritdoc />
+        public override bool Equals(object obj)
+            => (obj as UnusualPriceIndex)?.ParticleEffect == ParticleEffect;
+
+        /// <inheritdoc />
+        public override int GetHashCode()
+            => (int) ParticleEffect;
     }
 
     /// <inheritdoc />
@@ -137,6 +153,14 @@ namespace Backpack.Net
         /// <inheritdoc />
         public override string ToString()
             => CrateSeries.ToString();
+
+        /// <inheritdoc />
+        public override bool Equals(object obj)
+            => (obj as CratePriceIndex)?.CrateSeries == CrateSeries;
+
+        /// <inheritdoc />
+        public override int GetHashCode()
+            => CrateSeries;
     }
 
     /// <inheritdoc />
@@ -158,6 +182,14 @@ namespace Backpack.Net
         /// <inheritdoc />
         public override string ToString()
             => DefinitionIndex.ToString();
+
+        /// <inheritdoc />
+        public override bool Equals(object obj)
+            => (obj as ModifierPriceIndex)?.DefinitionIndex == DefinitionIndex;
+
+        /// <inheritdoc />
+        public override int GetHashCode()
+            => DefinitionIndex;
     }
 
     /// <inheritdoc />
@@ -185,5 +217,18 @@ namespace Backpack.Net
         /// <inheritdoc />
         public override string ToString()
             => $"{DefinitionIndex}-{(int) Quality}";
+
+        /// <inheritdoc />
+        public override bool Equals(object obj)
+        {
+            if (!(obj is ChemistrySetPriceIndex index))
+                return false;
+
+            return index.DefinitionIndex == DefinitionIndex && index.Quality == Quality;
+        }
+
+        /// <inheritdoc />
+        public override int GetHashCode()
+            => ((int) Quality) ^ DefinitionIndex;
     }
 }
