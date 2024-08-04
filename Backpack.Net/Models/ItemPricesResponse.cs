@@ -1,24 +1,33 @@
 ﻿using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace Backpack.Net
 {
     internal sealed class ItemPricesResponse : BackpackResponse
     {
-        [JsonProperty("items")]
-        private object _items;
+        // As of writing (8/4/2024), backpack.tf's item price API returns an "Unknown Item" with no defindexes
+        private static readonly string[] IgnoredItems = { "Unknown Item" };
+        
+        [JsonPropertyName("items")]
+        [JsonInclude]
+        private object _items = null!;
 
-        [JsonProperty("current_time")]
-        internal int CurrentTime { get; private set; }
+        [JsonPropertyName("current_time")]
+        [JsonInclude]
+        internal int CurrentTime { get; init; }
 
-        [JsonProperty("raw_usd_value")]
-        internal decimal RawUSDValue { get; private set; }
+        [JsonPropertyName("raw_usd_value")]
+        [JsonInclude]
+        internal decimal RawUSDValue { get; init; }
 
-        [JsonProperty("usd_currency")]
-        internal string USDCurrency { get; private set; }
+        [JsonPropertyName("usd_currency")]
+        [JsonInclude]
+        internal string USDCurrency { get; init; } = null!;
 
-        [JsonProperty("usd_currency_index")]
-        internal int USDCurrencyIndex { get; private set; }
+        [JsonPropertyName("usd_currency_index")]
+        [JsonInclude]
+        internal int USDCurrencyIndex { get; init; }
 
         [JsonIgnore]
         internal Dictionary<string, Item> Items 
@@ -32,7 +41,13 @@ namespace Backpack.Net
 
                 try
                 {
-                    return JsonConvert.DeserializeObject<Dictionary<string, Item>>(json);
+                    var dict = JsonSerializer.Deserialize<Dictionary<string, Item>>(json, BackpackClient.JsonOptions)!;
+                    foreach (var ignoredItem in IgnoredItems)
+                    {
+                        dict.Remove(ignoredItem);
+                    }
+
+                    return dict;
                 }
                 catch // failed to deserialize, must be []
                 {

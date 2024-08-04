@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Newtonsoft.Json;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace Backpack.Net
 {
@@ -9,11 +10,12 @@ namespace Backpack.Net
     /// </summary>
     public sealed class ItemPrice
     {
+        [JsonConstructor]
         internal ItemPrice()
         { }
 
         [JsonIgnore]
-        private string _name;
+        private string _name = null!;
 
         [JsonIgnore]
         private Quality _quality;
@@ -45,12 +47,12 @@ namespace Backpack.Net
 
                 try
                 {
-                    var dict = JsonConvert.DeserializeObject<Dictionary<string, Price>>(json);
+                    var dict = JsonSerializer.Deserialize<Dictionary<string, Price>>(json, BackpackClient.JsonOptions)!;
                     return dict.ToDictionary(x => PriceIndex.Create(_name, _quality, x.Key), x => x.Value);
                 }
                 catch
                 {
-                    var list = JsonConvert.DeserializeObject<List<Price>>(json);
+                    var list = JsonSerializer.Deserialize<List<Price>>(json, BackpackClient.JsonOptions)!;
                     return new Dictionary<PriceIndex, Price>
                     {
                         { new DefaultPriceIndex(), list[0] }
@@ -74,12 +76,12 @@ namespace Backpack.Net
 
                 try
                 {
-                    var dict = JsonConvert.DeserializeObject<Dictionary<string, Price>>(json);
+                    var dict = JsonSerializer.Deserialize<Dictionary<string, Price>>(json, BackpackClient.JsonOptions);
                     return dict.ToDictionary(x => PriceIndex.Create(_name, _quality, x.Key), x => x.Value);
                 }
                 catch
                 {
-                    var list = JsonConvert.DeserializeObject<List<Price>>(json);
+                    var list = JsonSerializer.Deserialize<List<Price>>(json, BackpackClient.JsonOptions)!;
                     return new Dictionary<PriceIndex, Price>
                     {
                         { new DefaultPriceIndex(), list[0] }
@@ -88,7 +90,8 @@ namespace Backpack.Net
             }
         }
 
-        [JsonProperty("Tradable")]
-        internal Tradability Tradable { get; private set; }
+        [JsonPropertyName("Tradable")]
+        [JsonInclude]
+        internal Tradability Tradable { get; init; } = null!;
     }
 }

@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
-using System.Collections.Immutable;
 using System.Linq;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace Backpack.Net
 {
@@ -11,6 +10,7 @@ namespace Backpack.Net
     /// </summary>
     public sealed class BackpackUsers
     {
+        [JsonConstructor]
         internal BackpackUsers()
         { }
 
@@ -24,25 +24,27 @@ namespace Backpack.Net
         /// If <see cref="IsSuccess"/> is false, this is error reason explaining why the request failed.
         /// </summary>
         [JsonIgnore]
-        public string ErrorMessage => _response?.ErrorMessage; // api does not return a response model on success
+        public string? ErrorMessage => _response?.ErrorMessage; // api does not return a response model on success
 
         /// <summary>
         /// If <see cref="IsSuccess"/> is false, this may contain additional error information.
         /// </summary>
         [JsonIgnore]
-        public string Reason => _response?.Reason; // api does not return a response model on success
+        public string? Reason => _response?.Reason; // api does not return a response model on success
 
         /// <summary>
         /// A collection of <see cref="BackpackUser"/>s.
         /// </summary>
         [JsonIgnore]
-        public ImmutableArray<BackpackUser> Users => _users.Where(x => x.Value is JObject)
-            .Select(x => x.Value.ToObject<BackpackUser>().WithId(ulong.Parse(x.Key))).ToImmutableArray();
+        public IReadOnlyList<BackpackUser> Users => _users.Where(x => x.Value.ValueKind != JsonValueKind.Array)
+            .Select(x => x.Value.Deserialize<BackpackUser>(BackpackClient.JsonOptions)!.WithId(ulong.Parse(x.Key))).ToList();
 
-        [JsonProperty("users")]
-        private readonly Dictionary<string, JToken> _users;
+        [JsonPropertyName("users")]
+        [JsonInclude]
+        private Dictionary<string, JsonElement> _users = null!;
 
-        [JsonProperty("response")]
-        private readonly BackpackResponse _response;
+        [JsonPropertyName("response")]
+        [JsonInclude]
+        private BackpackResponse? _response;
     }
 }

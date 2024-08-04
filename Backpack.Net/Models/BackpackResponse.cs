@@ -1,16 +1,19 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Backpack.Net
 {
     internal class BackpackResponse
     {
-        [JsonProperty("message")]
-        internal string ErrorMessage { get; private set; }
+        [JsonPropertyName("message")]
+        [JsonInclude]
+        internal string ErrorMessage { get; init; } = null!;
 
-        [JsonProperty("success")]
-        internal bool IsSuccess { get; private set; }
+        [JsonPropertyName("success")]
+        [JsonInclude]
+        internal bool IsSuccess { get; init; }
 
-        [JsonProperty("reason")]
-        internal string Reason { get; private set; }
+        [JsonPropertyName("reason")]
+        [JsonInclude]
+        internal string Reason { get; init; } = null!;
     }
 }

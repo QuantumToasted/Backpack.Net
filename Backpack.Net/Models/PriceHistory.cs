@@ -1,6 +1,6 @@
-﻿using System.Collections.Immutable;
+﻿using System.Collections.Generic;
 using System.Linq;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace Backpack.Net
 {
@@ -9,6 +9,7 @@ namespace Backpack.Net
     /// </summary>
     public sealed class PriceHistory
     {
+        [JsonConstructor]
         internal PriceHistory()
         { }
 
@@ -16,28 +17,29 @@ namespace Backpack.Net
         /// Whether or not the request was successful.
         /// </summary>
         [JsonIgnore]
-        public bool IsSuccess => _response.IsSuccess;
+        public bool IsSuccess => _response?.IsSuccess ?? true;
 
         /// <summary>
         /// If <see cref="IsSuccess"/> is false, this is error reason explaining why the request failed.
         /// </summary>
         [JsonIgnore]
-        public string ErrorMessage => _response.ErrorMessage;
+        public string? ErrorMessage => _response?.ErrorMessage;
 
         /// <summary>
         /// If <see cref="IsSuccess"/> is false, this may contain additional error information.
         /// </summary>
         [JsonIgnore]
-        public string Reason => _response.Reason;
+        public string? Reason => _response?.Reason;
 
         /// <summary>
         /// A collection of <see cref="Price"/>s, ordered from newest to oldest.
         /// </summary>
         [JsonIgnore]
-        public ImmutableArray<Price> History
-            => _response.Prices.OrderByDescending(x => x.LastUpdate).ToImmutableArray();
+        public IReadOnlyList<Price> History
+            => _response!.Prices.OrderByDescending(x => x.LastUpdate).ToArray();
 
-        [JsonProperty("response")]
-        private PriceHistoryResponse _response;
+        [JsonPropertyName("response")]
+        [JsonInclude]
+        private PriceHistoryResponse? _response;
     }
 }

@@ -1,19 +1,23 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Backpack.Net
 {
     internal sealed class Integrations
     {
-        [JsonProperty("group_member")]
-        internal bool IsGroupMember { get; private set; }
+        [JsonPropertyName("group_member")]
+        [JsonInclude]
+        public bool IsGroupMember { get; init; }
 
-        [JsonProperty("marketplace_seller")]
-        internal bool IsMarketplaceSeller { get; private set; }
+        [JsonPropertyName("marketplace_seller")]
+        [JsonInclude]
+        public bool IsMarketplaceSeller { get; init; }
 
-        [JsonProperty("automatic")]
-        internal bool IsAutomatic { get; private set; }
+        [JsonPropertyName("automatic")]
+        [JsonInclude]
+        public bool IsAutomatic { get; init; }
 
-        [JsonProperty("steamrep_admin")]
-        internal bool IsSteamRepAdmin { get; private set; }
+        [JsonPropertyName("steamrep_admin")]
+        [JsonInclude]
+        public bool IsSteamRepAdmin { get; init; }
     }
 }

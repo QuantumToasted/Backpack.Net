@@ -1,5 +1,5 @@
-﻿using System.Collections.Immutable;
-using Newtonsoft.Json;
+﻿using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace Backpack.Net
 {
@@ -8,6 +8,7 @@ namespace Backpack.Net
     /// </summary>
     public sealed class ImpersonatedUsers
     {
+        [JsonConstructor]
         internal ImpersonatedUsers()
         { }
 
@@ -21,27 +22,28 @@ namespace Backpack.Net
         /// If <see cref="IsSuccess"/> is false, this is error reason explaining why the request failed.
         /// </summary>
         [JsonIgnore]
-        public string ErrorMessage => _response?.ErrorMessage; // api does not return a response model on success
+        public string? ErrorMessage => _response?.ErrorMessage; // api does not return a response model on success
 
         /// <summary>
         /// If <see cref="IsSuccess"/> is false, this may contain additional error information.
         /// </summary>
         [JsonIgnore]
-        public string Reason => _response?.Reason; // api does not return a response model on success
+        public string? Reason => _response?.Reason; // api does not return a response model on success
 
         /// <summary>
         /// A collection of <see cref="ImpersonatedUser"/>s.
         /// </summary>
-        [JsonProperty("results")]
-        public ImmutableArray<ImpersonatedUser> Users { get; private set; }
+        [JsonPropertyName("results")]
+        public IReadOnlyList<ImpersonatedUser> Users { get; init; } = null!;
 
         /// <summary>
         /// The total number of impersonated users on backpack.tf. Used for pagination.
         /// </summary>
-        [JsonProperty("total")]
-        public int Total { get; private set; }
+        [JsonPropertyName("total")]
+        public int Total { get; init; }
 
-        [JsonProperty("response")]
-        private readonly BackpackResponse _response;
+        [JsonPropertyName("response")]
+        [JsonInclude]
+        private BackpackResponse? _response;
     }
 }

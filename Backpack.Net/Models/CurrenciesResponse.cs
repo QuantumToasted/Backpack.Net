@@ -1,17 +1,20 @@
 ﻿using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace Backpack.Net
 {
     internal sealed class CurrenciesResponse : BackpackResponse
     {
-        [JsonProperty("name")]
-        internal string Name { get; private set; }
+        [JsonPropertyName("name")]
+        [JsonInclude]
+        internal string Name { get; init; } = null!;
 
-        [JsonProperty("url")]
-        internal string Url { get; private set; }
+        [JsonPropertyName("url")]
+        [JsonInclude]
+        internal string Url { get; init; } = null!;
 
-        [JsonProperty("currencies")]
-        internal Dictionary<string, Currency> Currencies { get; private set; }
+        [JsonPropertyName("currencies")]
+        [JsonInclude]
+        internal Dictionary<string, Currency> Currencies { get; init; } = null!;
     }
 }

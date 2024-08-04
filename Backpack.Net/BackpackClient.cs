@@ -2,9 +2,8 @@
 using System.Linq;
 using System.Net.Http;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
-using Backpack.Net.Extensions;
-using Newtonsoft.Json;
 
 namespace Backpack.Net
 {
@@ -13,8 +12,8 @@ namespace Backpack.Net
     /// </summary>
     public sealed class BackpackClient : IDisposable
     {
-        internal static readonly DateTimeOffset UnixEpoch 
-            = new DateTimeOffset(new DateTime(1970, 1, 1, 0, 0, 0), TimeSpan.Zero);
+        internal static readonly JsonSerializerOptions JsonOptions = new JsonSerializerOptions { Converters = { new BooleanConverter() } };
+        internal static readonly DateTimeOffset UnixEpoch = new DateTimeOffset(new DateTime(1970, 1, 1, 0, 0, 0), TimeSpan.Zero);
         private const string API_URL = "https://backpack.tf/api";
         private readonly HttpClient _http;
         private readonly string _apiKey;
@@ -62,7 +61,7 @@ namespace Backpack.Net
         /// <param name="craftable">Whether to search for the Craftable or Non-Craftable variant of the item.</param>
         /// <param name="priceIndex">A specific <see cref="PriceIndex"/> for the item.</param>
         public async Task<PriceHistory> GetPriceHistoryAsync(string itemName, Quality quality, bool craftable = true,
-            PriceIndex priceIndex = null)
+            PriceIndex? priceIndex = null)
             => await GetAsync<PriceHistory>("IGetPriceHistory/v1",
                 ("appid", 440),
                 ("item", itemName.Replace(" ", "%20")),
@@ -107,12 +106,10 @@ namespace Backpack.Net
                 .AppendJoin(string.Empty, parameters.Select(x => $"&{x.Name}={x.Data}"))
                 .ToString();
 
-            using (var response = await _http.GetAsync(url).ConfigureAwait(false))
-            {
-                // response.EnsureSuccessStatusCode();
-                var content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-                return JsonConvert.DeserializeObject<T>(content);
-            }
+            using var response = await _http.GetAsync(url).ConfigureAwait(false);
+            // response.EnsureSuccessStatusCode();
+            var content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+            return JsonSerializer.Deserialize<T>(content, JsonOptions)!;
         }
         
         /// <inheritdoc />

@@ -1,5 +1,5 @@
 ﻿using System;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace Backpack.Net
 {
@@ -8,6 +8,7 @@ namespace Backpack.Net
     /// </summary>
     public sealed class ImpersonatedUser
     {
+        [JsonConstructor]
         internal ImpersonatedUser()
         { }
 
@@ -20,8 +21,8 @@ namespace Backpack.Net
         /// <summary>
         /// This user's Steam persona name.
         /// </summary>
-        [JsonProperty("personaname")]
-        public string Name { get; private set; }
+        [JsonPropertyName("personaname")]
+        public string Name { get; init; } = null!;
 
         /// <summary>
         /// This user's Steam persona avatar.
@@ -29,10 +30,12 @@ namespace Backpack.Net
         [JsonIgnore]
         public Uri AvatarUrl => new Uri(_avatar);
 
-        [JsonProperty("avatar")]
-        private readonly string _avatar;
+        [JsonPropertyName("avatar")]
+        [JsonInclude]
+        private string _avatar = null!;
 
-        [JsonProperty("steamid")]
-        private readonly string _steamId;
+        [JsonPropertyName("steamid")]
+        [JsonInclude]
+        private string _steamId = null!;
     }
 }

@@ -1,5 +1,5 @@
 ﻿using System;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace Backpack.Net
 {
@@ -8,20 +8,21 @@ namespace Backpack.Net
     /// </summary>
     public sealed class Currency
     {
+        [JsonConstructor]
         internal Currency()
         { }
 
         /// <summary>
         /// The in-game name for this currency.
         /// </summary>
-        [JsonProperty("name")]
-        public string Name { get; private set; }
+        [JsonPropertyName("name")]
+        public string Name { get; init; } = null!;
 
         /// <summary>
         /// The <see cref="Net.Quality"/> for this currency.
         /// </summary>
-        [JsonProperty("quality")]
-        public Quality Quality { get; private set; }
+        [JsonPropertyName("quality")]
+        public Quality Quality { get; init; }
 
         /// <summary>
         /// The <see cref="Net.PriceIndex"/> for this item.
@@ -29,32 +30,33 @@ namespace Backpack.Net
         [JsonIgnore]
         public PriceIndex PriceIndex => PriceIndex.Create(Name, Quality, _priceIndex);
 
-        [JsonProperty("priceindex")]
-        private readonly string _priceIndex;
+        [JsonPropertyName("priceindex")]
+        [JsonInclude]
+        private string _priceIndex = null!;
 
         /// <summary>
         /// The singular noun form of this currency as displayed for prices.
         /// </summary>
-        [JsonProperty("single")]
-        public string SingularForm { get; private set; }
+        [JsonPropertyName("single")]
+        public string SingularForm { get; init; } = null!;
 
         /// <summary>
         /// The plural noun form of this currency as displayed for prices.
         /// </summary>
-        [JsonProperty("plural")]
-        public string PluralForm { get; private set; }
+        [JsonPropertyName("plural")]
+        public string PluralForm { get; init; } = null!;
 
         /// <summary>
         /// The number of decimal places to round this currency's <see cref="Price"/> value to.
         /// </summary>
-        [JsonProperty("round")]
-        public int RoundTo { get; private set; }
+        [JsonPropertyName("round")]
+        public int RoundTo { get; init; }
 
         /// <summary>
         /// Whether or not the currency is a price blanket.
         /// </summary>
-        [JsonProperty("blanket")]
-        public bool IsPriceBlanket { get; private set; }
+        [JsonPropertyName("blanket")]
+        public bool IsPriceBlanket { get; init; }
 
         /// <summary>
         /// Whether or not this currency is craftable.
@@ -65,16 +67,17 @@ namespace Backpack.Net
         /// <summary>
         /// The item definition index for this currency.
         /// </summary>
-        [JsonProperty("defindex")]
-        public int DefinitionIndex { get; private set; }
+        [JsonPropertyName("defindex")]
+        public int DefinitionIndex { get; init; }
 
-        [JsonProperty("craftable")]
-        private string _craftable;
+        [JsonPropertyName("craftable")]
+        [JsonInclude]
+        private string _craftable = null!;
 
         /// <summary>
         /// The <see cref="Net.Price"/> model for this currency.
         /// </summary>
-        [JsonProperty("price")]
-        public Price Price { get; private set; }
+        [JsonPropertyName("price")]
+        public Price Price { get; init; } = null!;
     }
 }

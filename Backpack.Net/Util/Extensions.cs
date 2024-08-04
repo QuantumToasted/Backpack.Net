@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text;
 
-namespace Backpack.Net.Extensions
+namespace Backpack.Net
 {
     internal static class Extensions
     {
@@ -11,8 +11,9 @@ namespace Backpack.Net.Extensions
 
         internal static List<SiteBan> WithBan(this List<SiteBan> bans, SiteBan ban, SiteBanType type)
         {
-            if (!(ban is null))
+            if (ban is not null)
                 bans.Add(ban.WithType(type));
+            
             return bans;
         }
     }

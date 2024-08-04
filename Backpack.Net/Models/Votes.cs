@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Backpack.Net
 {
@@ -7,25 +7,26 @@ namespace Backpack.Net
     /// </summary>
     public sealed class Votes
     {
+        [JsonConstructor]
         internal Votes()
         { }
 
         /// <summary>
         /// The number of positive votes this user has cast.
         /// </summary>
-        [JsonProperty("positive")]
-        public int Positive { get; private set; }
+        [JsonPropertyName("positive")]
+        public int Positive { get; init; }
 
         /// <summary>
         /// The number of negative votes this user has cast.
         /// </summary>
-        [JsonProperty("negative")]
-        public int Negative { get; private set; }
+        [JsonPropertyName("negative")]
+        public int Negative { get; init; }
 
         /// <summary>
         /// The number of votes that were accepted or accurate.
         /// </summary>
-        [JsonProperty("accepted")]
-        public int Accepted { get; private set; }
+        [JsonPropertyName("accepted")]
+        public int Accepted { get; init; }
     }
 }

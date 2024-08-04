@@ -1,19 +1,23 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Backpack.Net
 {
     internal sealed class ValveBans
     {
-        [JsonProperty("economy")]
-        internal bool IsEconomyBanned { get; private set; }
+        [JsonPropertyName("economy")]
+        [JsonInclude]
+        internal bool IsEconomyBanned { get; init; }
 
-        [JsonProperty("community")]
-        internal bool IsCommunityBanned { get; private set; }
+        [JsonPropertyName("community")]
+        [JsonInclude]
+        internal bool IsCommunityBanned { get; init; }
 
-        [JsonProperty("vac")]
-        internal bool IsVACBanned { get; private set; }
+        [JsonPropertyName("vac")]
+        [JsonInclude]
+        internal bool IsVACBanned { get; init; }
 
-        [JsonProperty("game")]
-        internal bool IsGameBanned { get; private set; }
+        [JsonPropertyName("game")]
+        [JsonInclude]
+        internal bool IsGameBanned { get; init; }
     }
 }

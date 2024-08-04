@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using System.Collections.Immutable;
-using Newtonsoft.Json;
+using System.Linq;
+using System.Text.Json.Serialization;
 
 namespace Backpack.Net
 {
@@ -9,11 +9,12 @@ namespace Backpack.Net
     /// </summary>
     public sealed class Item
     {
+        [JsonConstructor]
         internal Item()
         { }
 
         [JsonIgnore]
-        private string _name;
+        private string _name = null!;
 
         internal Item WithName(string name)
         {
@@ -24,18 +25,18 @@ namespace Backpack.Net
         /// <summary>
         /// The item definitions indexes that could represent this particular item.
         /// </summary>
-        [JsonProperty("defindex")]
-        public ImmutableArray<int> DefinitionIndexes { get; private set; }
+        [JsonPropertyName("defindex")]
+        public IReadOnlyList<int> DefinitionIndexes { get; init; } = null!;
 
         /// <summary>
         /// A mapping of valid qualities to <see cref="ItemPrice"/>s.
         /// </summary>
         [JsonIgnore]
-        public ImmutableSortedDictionary<Quality, ItemPrice> Qualities
-            => _prices.ToImmutableSortedDictionary(x => (Quality) int.Parse(x.Key),
-                x => x.Value.WithName(_name).WithQuality((Quality) int.Parse(x.Key)));
+        public IReadOnlyDictionary<Quality, ItemPrice> Qualities
+            => _prices.ToDictionary(x => (Quality)int.Parse(x.Key), x => x.Value.WithName(_name).WithQuality((Quality)int.Parse(x.Key)));
 
-        [JsonProperty("prices")]
-        private Dictionary<string, ItemPrice> _prices;
+        [JsonPropertyName("prices")]
+        [JsonInclude]
+        private Dictionary<string, ItemPrice> _prices = null!;
     }
 }

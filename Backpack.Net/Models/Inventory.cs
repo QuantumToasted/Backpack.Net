@@ -1,5 +1,5 @@
 ﻿using System;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace Backpack.Net
 {
@@ -8,20 +8,21 @@ namespace Backpack.Net
     /// </summary>
     public sealed class Inventory
     {
+        [JsonConstructor]
         internal Inventory()
         { }
 
         /// <summary>
         /// This inventory's ranking on backpack.tf.
         /// </summary>
-        [JsonProperty("ranking")]
-        public int Ranking { get; private set; }
+        [JsonPropertyName("ranking")]
+        public int Ranking { get; init; }
 
         /// <summary>
         /// This inventory's value, in the lowest currency.
         /// </summary>
-        [JsonProperty("value")]
-        public decimal Value { get; private set; }
+        [JsonPropertyName("value")]
+        public decimal Value { get; init; }
 
         /// <summary>
         /// The last time this inventory was updated.
@@ -32,14 +33,14 @@ namespace Backpack.Net
         /// <summary>
         /// The amount of raw metal (refined) this inventory contains.
         /// </summary>
-        [JsonProperty("metal")]
-        public decimal Metal { get; private set; }
+        [JsonPropertyName("metal")]
+        public decimal Metal { get; init; }
 
         /// <summary>
         /// The amount of raw keys this inventory contains.
         /// </summary>
-        [JsonProperty("keys")]
-        public int Keys { get; private set; }
+        [JsonPropertyName("keys")]
+        public int Keys { get; init; }
 
         /// <summary>
         /// The currently used item slots for this inventory.
@@ -53,10 +54,12 @@ namespace Backpack.Net
         [JsonIgnore]
         public int TotalSlots => _slots.Total;
 
-        [JsonProperty("slots")]
+        [JsonPropertyName("slots")]
+        [JsonInclude]
         private Slots _slots = new Slots();
 
-        [JsonProperty("updated")]
-        private readonly int _lastUpdate;
+        [JsonPropertyName("updated")]
+        [JsonInclude]
+        private int _lastUpdate;
     }
 }

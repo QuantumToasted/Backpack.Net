@@ -1,13 +1,15 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Backpack.Net
 {
     internal sealed class Slots
     {
-        [JsonProperty("used")]
-        internal int Used { get; private set; }
+        [JsonPropertyName("used")]
+        [JsonInclude]
+        internal int Used { get; init; }
 
-        [JsonProperty("total")]
-        internal int Total { get; private set; }
+        [JsonPropertyName("total")]
+        [JsonInclude]
+        internal int Total { get; init; }
     }
 }

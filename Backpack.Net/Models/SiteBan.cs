@@ -1,5 +1,5 @@
 ﻿using System;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace Backpack.Net
 {
@@ -8,6 +8,7 @@ namespace Backpack.Net
     /// </summary>
     public sealed class SiteBan
     {
+        [JsonConstructor]
         internal SiteBan()
         { }
 
@@ -40,10 +41,11 @@ namespace Backpack.Net
         /// <summary>
         /// If set, the reason for this ban.
         /// </summary>
-        [JsonProperty("reason")]
-        public string Reason { get; private set; }
+        [JsonPropertyName("reason")]
+        public string? Reason { get; init; }
 
-        [JsonProperty("end")]
-        private readonly int _end;
+        [JsonPropertyName("end")]
+        [JsonInclude]
+        private int _end;
     }
 }

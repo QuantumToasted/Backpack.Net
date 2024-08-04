@@ -1,5 +1,5 @@
 ﻿using System;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace Backpack.Net
 {
@@ -8,6 +8,7 @@ namespace Backpack.Net
     /// </summary>
     public sealed class Price
     {
+        [JsonConstructor]
         internal Price()
         { }
 
@@ -15,53 +16,62 @@ namespace Backpack.Net
         /// The value of this item, as a multiple of <see cref="Currency"/>.
         /// <para/> If <see cref="HighValue"/> is set, this is the lower bound of the average price of the item.
         /// </summary>
-        [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore)]
-        public decimal Value { get; private set; }
+        [JsonIgnore]
+        public decimal Value => _value.GetValueOrDefault();
+
+        [JsonPropertyName("value")]
+        [JsonInclude]
+        private decimal? _value;
 
         /// <summary>
         /// The upper bound of the average price of the item.
         /// </summary>
-        [JsonProperty("value_high")]
-        public decimal? HighValue { get; private set; }
+        [JsonPropertyName("value_high")]
+        public decimal? HighValue { get; init; }
 
         /// <summary>
         /// If set, this is the average price of the item in the lowest currency.
         /// If <see cref="HighRawValue"/> is set, this is the lower bound of the average price of the item in the lowest currency.
         /// </summary>
-        [JsonProperty("value_raw")]
-        public decimal? RawValue { get; private set; }
+        [JsonPropertyName("value_raw")]
+        public decimal? RawValue { get; init; }
 
         /// <summary>
         /// If set, this is the upper bound of the average price of the item in the lowest currency.
         /// </summary>
-        [JsonProperty("value_raw_high")]
-        public decimal? HighRawValue { get; private set; }
+        [JsonPropertyName("value_raw_high")]
+        public decimal? HighRawValue { get; init; }
 
         /// <summary>
         /// The type of currency this item's <see cref="Value"/> is a multiple of.
         /// </summary>
-        [JsonProperty("currency")]
-        public string Currency { get; private set; }
+        [JsonPropertyName("currency")]
+        public string Currency { get; init; } = null!;
 
         /// <summary>
         /// The difference in price from the previous price entry in the lowest currency.
         /// </summary>
-        [JsonProperty("difference", NullValueHandling = NullValueHandling.Ignore)]
-        public decimal Difference { get; private set; }
+        [JsonIgnore]
+        public decimal Difference => _difference.GetValueOrDefault();
+
+        [JsonPropertyName("difference")]
+        [JsonInclude]
+        private decimal? _difference;
 
         /// <summary>
         /// The last time this price entry was updated.
         /// </summary>
         [JsonIgnore]
-        public DateTimeOffset LastUpdate => BackpackClient.UnixEpoch.AddSeconds(_lastUpdate);
+        public DateTimeOffset LastUpdate => BackpackClient.UnixEpoch.AddSeconds(_lastUpdate.GetValueOrDefault());
 
-        [JsonProperty("last_update", NullValueHandling = NullValueHandling.Ignore)]
-        private readonly long _lastUpdate;
+        [JsonPropertyName("last_update")]
+        [JsonInclude]
+        private long? _lastUpdate;
 
         /// <summary>
         /// Whether or not this price entry is for an Australium weapon.
         /// </summary>
-        [JsonProperty("australium")]
-        public bool IsAustralium { get; private set; }
+        [JsonPropertyName("australium")]
+        public bool IsAustralium { get; init; }
     }
 }

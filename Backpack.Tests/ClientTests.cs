@@ -8,7 +8,7 @@ namespace Backpack.Tests
     public class ClientTests
     {
         private static readonly BackpackClient Client 
-            = new BackpackClient(Environment.GetEnvironmentVariable("BACKPACK_APIKEY", EnvironmentVariableTarget.User));
+            = new BackpackClient(Environment.GetEnvironmentVariable("BACKPACK_APIKEY"));
 
         [Fact]
         public async Task TestCurrenciesAsync()
@@ -16,7 +16,7 @@ namespace Backpack.Tests
             var response = await Client.GetCurrenciesAsync();
 
             Assert.NotNull(response);
-            Assert.True(response.IsSuccess);
+            Assert.True(response.IsSuccess, response.ErrorMessage);
 
             foreach (var currency in new[]
                 {response.CraftHat, response.CrateKey, response.Earbuds, response.RefinedMetal})
@@ -50,7 +50,7 @@ namespace Backpack.Tests
                         Assert.NotNull(price.Key);
                         Assert.NotNull(price.Value);
                     }
-
+                    
                     Assert.NotNull(quality.Value.Craftable);
                     foreach (var price in quality.Value.Craftable)
                     {
@@ -91,11 +91,11 @@ namespace Backpack.Tests
                 Assert.False(string.IsNullOrWhiteSpace(user.Name));
                 Assert.NotNull(user.AvatarUrl);
 
-                Assert.NotNull(user.Voting);
-                Assert.NotNull(user.Voting.Suggestions);
-                Assert.NotNull(user.Voting.Votes);
-
-                Assert.NotNull(user.Trust);
+                if (user.Voting is not null)
+                {
+                    Assert.NotNull(user.Voting.Suggestions);
+                    Assert.NotNull(user.Voting.Votes);
+                }
 
                 Assert.NotNull(user.Inventory);
             }

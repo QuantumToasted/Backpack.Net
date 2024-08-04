@@ -1,13 +1,15 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Backpack.Net
 {
     internal sealed class Tradability
     {
-        [JsonProperty("Craftable")]
-        internal object Craftable { get; private set; }
+        [JsonPropertyName("Craftable")]
+        [JsonInclude]
+        internal object Craftable { get; init; } = null!;
 
-        [JsonProperty("Non-Craftable")]
-        internal object NonCraftable { get; private set; }
+        [JsonPropertyName("Non-Craftable")]
+        [JsonInclude]
+        internal object NonCraftable { get; init; } = null!;
     }
 }

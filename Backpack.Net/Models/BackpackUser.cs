@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.Immutable;
-using Backpack.Net.Extensions;
-using Newtonsoft.Json;
+using System.Linq;
+using System.Text.Json.Serialization;
 
 namespace Backpack.Net
 {
@@ -11,6 +10,7 @@ namespace Backpack.Net
     /// </summary>
     public sealed class BackpackUser
     {
+        [JsonConstructor]
         internal BackpackUser()
         { }
 
@@ -29,8 +29,8 @@ namespace Backpack.Net
         /// <summary>
         /// The user's Steam persona name.
         /// </summary>
-        [JsonProperty("name")]
-        public string Name { get; private set; }
+        [JsonPropertyName("name")]
+        public string Name { get; init; } = null!;
 
         /// <summary>
         /// The user's Steam persona avatar.
@@ -44,23 +44,25 @@ namespace Backpack.Net
         [JsonIgnore]
         public DateTimeOffset? LastOnline => _lastOnline == 0 ? (DateTimeOffset?) null : BackpackClient.UnixEpoch.AddSeconds(_lastOnline);
 
-        [JsonProperty("admin")]
-        private readonly bool _admin;
+        [JsonPropertyName("admin")]
+        [JsonInclude]
+        private bool _admin;
 
         /// <summary>
         /// The amount of money, (in $USD) this user has donated.
         /// </summary>
-        [JsonProperty("donated")]
-        public decimal AmountDonated { get; private set; }
+        [JsonPropertyName("donated")]
+        public decimal AmountDonated { get; init; }
 
-        [JsonProperty("premium")]
-        private readonly bool _premium;
+        [JsonPropertyName("premium")]
+        [JsonInclude]
+        private bool _premium;
 
         /// <summary>
         /// The number of months of backpack.tf Premium this user has gifted to others.
         /// </summary>
-        [JsonProperty("premium_months_gifted")]
-        public int PremiumMonthsGifted { get; private set; }
+        [JsonPropertyName("premium_months_gifted")]
+        public int PremiumMonthsGifted { get; init; }
 
         /// <summary>
         /// A collection of flags this user has set on the site.
@@ -77,27 +79,33 @@ namespace Backpack.Net
                 if (_premium)
                     flags |= BackpackUserFlags.Premium;
 
-                if (_integrations.IsGroupMember)
-                    flags |= BackpackUserFlags.GroupMember;
-                if (_integrations.IsMarketplaceSeller)
-                    flags |= BackpackUserFlags.MarketplaceSeller;
-                if (_integrations.IsAutomatic)
-                    flags |= BackpackUserFlags.Automatic;
-                if (_integrations.IsSteamRepAdmin)
-                    flags |= BackpackUserFlags.SteamRepAdmin;
+                if (_integrations is not null)
+                {
+                    if (_integrations.IsGroupMember)
+                        flags |= BackpackUserFlags.GroupMember;
+                    if (_integrations.IsMarketplaceSeller)
+                        flags |= BackpackUserFlags.MarketplaceSeller;
+                    if (_integrations.IsAutomatic)
+                        flags |= BackpackUserFlags.Automatic;
+                    if (_integrations.IsSteamRepAdmin)
+                        flags |= BackpackUserFlags.SteamRepAdmin;
+                }
 
-                if (_bans.IsSteamRepScammer)
-                    flags |= BackpackUserFlags.SteamRepScammer;
-                if (_bans.IsSteamRepCaution)
-                    flags |= BackpackUserFlags.SteamRepCaution;
-                if (_bans.Valve.IsEconomyBanned)
-                    flags |= BackpackUserFlags.SteamEconomyBanned;
-                if (_bans.Valve.IsCommunityBanned)
-                    flags |= BackpackUserFlags.SteamCommunityBanned;
-                if (_bans.Valve.IsVACBanned)
-                    flags |= BackpackUserFlags.SteamVACBanned;
-                if (_bans.Valve.IsGameBanned)
-                    flags |= BackpackUserFlags.ValveGameBanned;
+                if (_bans is not null)
+                {
+                    if (_bans.IsSteamRepScammer)
+                        flags |= BackpackUserFlags.SteamRepScammer;
+                    if (_bans.IsSteamRepCaution)
+                        flags |= BackpackUserFlags.SteamRepCaution;
+                    if (_bans.Valve.IsEconomyBanned)
+                        flags |= BackpackUserFlags.SteamEconomyBanned;
+                    if (_bans.Valve.IsCommunityBanned)
+                        flags |= BackpackUserFlags.SteamCommunityBanned;
+                    if (_bans.Valve.IsVACBanned)
+                        flags |= BackpackUserFlags.SteamVACBanned;
+                    if (_bans.Valve.IsGameBanned)
+                        flags |= BackpackUserFlags.ValveGameBanned;
+                }
 
                 return flags;
             }
@@ -107,29 +115,36 @@ namespace Backpack.Net
         /// A collection of <see cref="SiteBan"/>s this user has on the site.
         /// </summary>
         [JsonIgnore]
-        public ImmutableArray<SiteBan> SiteBans
-            => new List<SiteBan>()
-                .WithBan(_bans.All, SiteBanType.All)
-                .WithBan(_bans.Suggestions, SiteBanType.Suggestions)
-                .WithBan(_bans.Comments, SiteBanType.Comments)
-                .WithBan(_bans.Trust, SiteBanType.Trust)
-                .WithBan(_bans.Issues, SiteBanType.Issues)
-                .WithBan(_bans.Classifieds, SiteBanType.Classifieds)
-                .WithBan(_bans.Customizations, SiteBanType.Customizations)
-                .WithBan(_bans.Reports, SiteBanType.Reports)
-                .ToImmutableArray();
+        public IReadOnlyList<SiteBan> SiteBans
+        {
+            get
+            {
+                if (_bans is null)
+                    return new List<SiteBan>();
+                
+                return new List<SiteBan>()
+                    .WithBan(_bans.All, SiteBanType.All)
+                    .WithBan(_bans.Suggestions, SiteBanType.Suggestions)
+                    .WithBan(_bans.Comments, SiteBanType.Comments)
+                    .WithBan(_bans.Trust, SiteBanType.Trust)
+                    .WithBan(_bans.Issues, SiteBanType.Issues)
+                    .WithBan(_bans.Classifieds, SiteBanType.Classifieds)
+                    .WithBan(_bans.Customizations, SiteBanType.Customizations)
+                    .WithBan(_bans.Reports, SiteBanType.Reports);
+            }
+        }
 
         /// <summary>
         /// This user's <see cref="Net.Voting"/> stats.
         /// </summary>
-        [JsonProperty("voting")]
-        public Voting Voting { get; private set; } = new Voting();
+        [JsonPropertyName("voting")]
+        public Voting? Voting { get; init; }
 
         /// <summary>
         /// This user's <see cref="Net.Trust"/> stats.
         /// </summary>
-        [JsonProperty("trust")]
-        public Trust Trust { get; private set; } = new Trust();
+        [JsonPropertyName("trust")]
+        public Trust? Trust { get; init; }
 
         /// <summary>
         /// This user's <see cref="Net.Inventory"/>.
@@ -137,19 +152,24 @@ namespace Backpack.Net
         [JsonIgnore]
         public Inventory Inventory => _inventories.TryGetValue("440", out var value) ? value : new Inventory();
 
-        [JsonProperty("bans")]
-        private InternalBans _bans = new InternalBans();
+        [JsonPropertyName("bans")]
+        [JsonInclude]
+        private InternalBans? _bans;
 
-        [JsonProperty("integrations")]
-        private Integrations _integrations = new Integrations();
+        [JsonPropertyName("integrations")]
+        [JsonInclude]
+        private Integrations? _integrations;
 
-        [JsonProperty("last_online")]
-        private readonly int _lastOnline;
+        [JsonPropertyName("last_online")]
+        [JsonInclude]
+        private int _lastOnline;
 
-        [JsonProperty("avatar")]
-        private readonly string _avatar;
+        [JsonPropertyName("avatar")]
+        [JsonInclude]
+        private string _avatar = null!;
 
-        [JsonProperty("inventory")]
-        private Dictionary<string, Inventory> _inventories = new Dictionary<string, Inventory>();
+        [JsonPropertyName("inventory")]
+        [JsonInclude]
+        private Dictionary<string, Inventory> _inventories = null!;
     }
 }

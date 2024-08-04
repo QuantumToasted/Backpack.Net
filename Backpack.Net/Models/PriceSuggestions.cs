@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Backpack.Net
 {
@@ -7,25 +7,26 @@ namespace Backpack.Net
     /// </summary>
     public sealed class PriceSuggestions
     {
+        [JsonConstructor]
         internal PriceSuggestions()
         { }
 
         /// <summary>
         /// The number of price suggestions this user has created.
         /// </summary>
-        [JsonProperty("created")]
-        public int Created { get; private set; }
+        [JsonPropertyName("created")]
+        public int Created { get; init; }
 
         /// <summary>
         /// The number of price suggestions this user has had accepted.
         /// </summary>
-        [JsonProperty("accepted")]
-        public int Accepted { get; private set; }
+        [JsonPropertyName("accepted")]
+        public int Accepted { get; init; }
 
         /// <summary>
         /// the number of price suggestions for unusual items this user has had accepted.
         /// </summary>
-        [JsonProperty("accepted_unusual")]
-        public int AcceptedUnusual { get; private set; }
+        [JsonPropertyName("accepted_unusual")]
+        public int AcceptedUnusual { get; init; }
     }
 }

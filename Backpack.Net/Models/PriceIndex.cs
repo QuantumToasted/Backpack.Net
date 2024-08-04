@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Text.Json.Serialization;
+using System.Text.RegularExpressions;
 
 namespace Backpack.Net
 {
@@ -7,11 +8,17 @@ namespace Backpack.Net
     /// </summary>
     public abstract class PriceIndex
     {
+        [JsonConstructor]
         internal PriceIndex()
         { }
 
         internal static PriceIndex Create(string name, Quality quality, string priceIndex)
         {
+            // TODO: The Lugermorph is supposedly unique in that it can be both Vintage and have a particle effect (Community Sparkle).
+            // I really wanted to avoid this, but because it is breaking deserialization, I'm special casing it as an "Unusual" price index.
+            if (name == "Lugermorph" && priceIndex == "4") 
+                return new UnusualPriceIndex(ParticleEffect.CommunitySparkle);
+            
             if (quality == Quality.Unusual && 
                 int.TryParse(priceIndex, out var particleEffect))
             {
@@ -86,6 +93,7 @@ namespace Backpack.Net
     /// </summary>
     public sealed class DefaultPriceIndex : PriceIndex
     {
+        [JsonConstructor]
         internal DefaultPriceIndex()
         { }
 
@@ -138,7 +146,7 @@ namespace Backpack.Net
     public sealed class CratePriceIndex : PriceIndex
     {
         internal static readonly Regex CrateRegex =
-            new Regex(@"( case\b|crate\b)(?! key)", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+            new Regex(@" (case\b|crate\b|munition\b)(?! key)", RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
         internal CratePriceIndex(int crateSeries)
         {

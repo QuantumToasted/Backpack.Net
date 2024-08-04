@@ -1,40 +1,51 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Backpack.Net
 {
     internal sealed class InternalBans
     {
-        [JsonProperty("steamrep_scammer")]
-        internal bool IsSteamRepScammer { get; private set; }
+        [JsonPropertyName("steamrep_scammer")]
+        [JsonInclude]
+        internal bool IsSteamRepScammer { get; init; }
 
-        [JsonProperty("steamrep_caution")]
-        internal bool IsSteamRepCaution { get; private set; }
+        [JsonPropertyName("steamrep_caution")]
+        [JsonInclude]
+        internal bool IsSteamRepCaution { get; init; }
 
-        [JsonProperty("valve")]
-        internal ValveBans Valve { get; private set; } = new ValveBans();
+        [JsonPropertyName("valve")]
+        [JsonInclude]
+        internal ValveBans Valve { get; init; } = null!;
 
-        [JsonProperty("all")]
-        internal SiteBan All { get; private set; }
+        [JsonPropertyName("all")]
+        [JsonInclude]
+        internal SiteBan All { get; init; } = null!;
 
-        [JsonProperty("suggestions")]
-        internal SiteBan Suggestions { get; private set; }
+        [JsonPropertyName("suggestions")]
+        [JsonInclude]
+        internal SiteBan Suggestions { get; init; } = null!;
 
-        [JsonProperty("comments")]
-        internal SiteBan Comments { get; private set; }
+        [JsonPropertyName("comments")]
+        [JsonInclude]
+        internal SiteBan Comments { get; init; } = null!;
 
-        [JsonProperty("trust")]
-        internal SiteBan Trust { get; private set; }
+        [JsonPropertyName("trust")]
+        [JsonInclude]
+        internal SiteBan Trust { get; init; } = null!;
 
-        [JsonProperty("issues")]
-        internal SiteBan Issues { get; private set; }
+        [JsonPropertyName("issues")]
+        [JsonInclude]
+        internal SiteBan Issues { get; init; } = null!;
 
-        [JsonProperty("classifieds")]
-        internal SiteBan Classifieds { get; private set; }
+        [JsonPropertyName("classifieds")]
+        [JsonInclude]
+        internal SiteBan Classifieds { get; init; } = null!;
 
-        [JsonProperty("customizations")]
-        internal SiteBan Customizations { get; private set; }
+        [JsonPropertyName("customizations")]
+        [JsonInclude]
+        internal SiteBan Customizations { get; init; } = null!;
 
-        [JsonProperty("reports")]
-        internal SiteBan Reports { get; private set; }
+        [JsonPropertyName("reports")]
+        [JsonInclude]
+        internal SiteBan Reports { get; init; } = null!;
     }
 }
